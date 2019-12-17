@@ -28,3 +28,7 @@ for line in fhandle_two:
 print(counts_dict)
 
 
+# continuing this idea of using a library to take care of tasks for us,
+# next up is using BeautifulSoup so parse the HTML for us, which means
+# the decode() functions calls above won't be necessary, as we'll be working
+# through a soup object.
