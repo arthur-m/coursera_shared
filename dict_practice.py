@@ -33,4 +33,10 @@ print(counts_two)
 
 
 
+counts = {}
+cat_names = ['Ridley', 'Leroy', 'Doodle', 'Leroy', 'Noodle', 'Ridley', 'Leroy', 'Noodle', 'Noodle']
 
+for name in cat_names:
+    counts[name] = counts.get(name, 0) + 1
+
+print(counts)
