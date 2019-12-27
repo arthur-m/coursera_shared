@@ -30,7 +30,7 @@ while True:
 
     print('Retrieving', url)
     uh = urllib.request.urlopen(url, context=ctx)
-    data = uh.read().decode()                       # decode from UTF-8
+    data = uh.read().decode()       # decode from UTF-8. if you remove .decode() it still works, so why is it there???
     print('Retrieved', len(data), 'characters')
 
     try:

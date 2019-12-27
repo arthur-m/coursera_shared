@@ -30,5 +30,5 @@ for count in counts:
 print('Sum: {}'.format(str(x)))   # need to make total a string to print it
 
 # actually, the point of format is that it will handle the conversion itself:
-
 print('Sum: {}'.format(x))  # no need to convert x to string when using format()
+
