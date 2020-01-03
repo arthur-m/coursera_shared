@@ -40,3 +40,4 @@ cur.close()
 
 # always distinguish clearly in mind between data source (in this case mbox-short.txt)
 # and the database we are building.
+
