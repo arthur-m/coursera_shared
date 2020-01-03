@@ -2,7 +2,7 @@
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww17460\viewh20560\viewkind0
+\margl1440\margr1440\vieww17460\viewh22960\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs28 \cf0 #
@@ -65,5 +65,76 @@ SELECT * FROM Users WHERE email='csev@umich.edu'\
 # select with ORDER BY\
 SELECT * FROM Users ORDER BY email\
 \
+JOIN	- links across several tables as part of a select operation. You must tll the JOIN how to use the keys that make the connection\
+	 between tables using an ON clause.\
 \
+\
+# to modify the properties of the DB SCHEMA itself, meaning not the data inside it, but the way it was designed, as a template, in the first\
+place, requires specific commands. For instance, you once had a table with a field named 'text' that you wanted to change to 'title'.\
+\
+ALTER TABLE table RENAME COLUMN oldname TO newname              (the 'column' is the field that you originally created)\
+\
+\
+\
+Quick Review:   Column is the Attribute, Row is the Object   -- the Table contains both.\
+\
+\
+---------- USING JOIN ----------\
+\
+\
+JOIN	-	An operation that links across several tables as part of a select operation\
+\
+		JOIN must be told how to use the keys that make the connection between the tables (foreign key > primary key)\
+		do this using the 
+\b on 
+\b0 clause\
+\
+		
+\b on 
+\b0 should be read like a conditional -- only connect these two rows when / where the following statement is True\
+\
+		from GeeksForGeeks: 'To specify arbitrary conditions or specify columsn to JOIN, the ON clause is used.'\
+\
+\
+	bold = SQL commands\
+\
+\
+		   column       column               table         table        	  foreign key        primary key\
+			|              |                           |                |                    |                      |\
+	
+\b select
+\b0  Album.title, Artist.name 
+\b from
+\b0  Album 
+\b join
+\b0  Artist 
+\b on
+\b0  Album.artist_id = Artist.id\
+     \
+\
+	\'95 dot operator notation is just like python object.method -- Album.title, Album is the TABLE and title is the COLUMN / FIELD in that table.\
+\
+\
+\'95 Note: Clarify difference, in SQL, between WHERE clause and ON clause.\
+\
+\
+	
+\b select
+\b0  Track.title, Genre.name 
+\b from
+\b0  Track 
+\b join
+\b0  Genre 
+\b on
+\b0  Track.genre_id = Genre.id\
+\
+\'95 Example of all desired connections made:\
+\
+	
+\b select 
+\b0 Track.title, Artist.name, Album.title, Genre.name from Track join Genre join Album join Artist on \
+	Track.genre_id = Genre.id and Track.album_id = Album.id and Album.artist_id = Artist.id\
+\
+\
+	returns 4x4 cell with each track + artist name, album title and genre for that track.\
 }
